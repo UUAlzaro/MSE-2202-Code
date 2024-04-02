@@ -7,11 +7,11 @@
 // Pin layout : 
 // 5v to VCC, to the S2,S3 side 
 // GND to ground (again S2,S3 side)
-#define S0 4 // pin 4 in my arduino 
-#define S1 5
-#define S2 6
-#define S3 7
-#define sensorOut 8
+#define S0 40 // pin 4 in my arduino 
+#define S1 41
+#define S2 42
+#define S3 44
+#define sensorOut 43
 
 // Variables for Color Pulse Width Measurements
 
@@ -26,7 +26,7 @@ void setup() {
   pinMode(S1, OUTPUT);
   pinMode(S2, OUTPUT);
   pinMode(S3, OUTPUT);
-  pinMode(12,OUTPUT); // pin 12 in my ardunio 
+  pinMode(45,OUTPUT); // pin 12 in my ardunio 
   
   // Set Sensor output as input
   pinMode(sensorOut, INPUT);
@@ -40,7 +40,7 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite(12,HIGH); 
+  digitalWrite(45,HIGH); 
   // Read Red Pulse Width
   redPW = getRedPW();
   // Delay to stabilize sensor

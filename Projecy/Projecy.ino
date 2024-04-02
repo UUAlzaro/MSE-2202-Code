@@ -1,6 +1,6 @@
 //This is the Main Code for the colour sensor + Servo Motor Pair!!
 
-#include <Servo.h>
+#include <ESP32Servo.h>
 Servo myServo; // creating a Servo object
 int potpin = 0; 
 int val = 0;
@@ -17,12 +17,12 @@ int servo = 0;
 // Calibration Values
 // Get these from Calibration Sketch
 
-int redMin = 33; // Red minimum value
-int redMax = 170; // Red maximum value
-int greenMin = 32; // Green minimum value
-int greenMax = 164; // Green maximum value
-int blueMin = 31;// Blue minimum value
-int blueMax = 163; // Blue maximum value
+int redMin = 164; // Red minimum value
+int redMax = 455; // Red maximum value
+int greenMin = 169; // Green minimum value
+int greenMax = 456; // Green maximum value
+int blueMin = 167;// Blue minimum value
+int blueMax = 448; // Blue maximum value
 
 // Variables for Color Pulse Width Measurements
 
@@ -90,19 +90,19 @@ void loop() {
   Serial.print(" - Blue = ");
   Serial.println(blueValue);
 
-  if (servo == 0){myServo.write(20);servo++ ;} // this is a line of code that puts the platform horizontal (angle = 0). Change accordingly 
+  if (servo == 0){myServo.write(90);servo++ ;} // this is a line of code that puts the platform horizontal (angle = 0). Change accordingly 
   for(int accuracy = 0; accuracy < 5 ;accuracy++){
     if ((greenValue > redValue+15) && (greenValue > blueValue+15)){
-    myServo.write(0); 
+    myServo.write(30); 
     delay(150);  //change this into the millis(), function. 
-    myServo.write(20); 
+    myServo.write(90); 
    
     }
   }
   if((greenValue < redValue) || (greenValue < blueValue)){
-    myServo.write(60); 
+    myServo.write(150); 
     delay(150); 
-    myServo.write(20); 
+    myServo.write(90); 
 
   }
 

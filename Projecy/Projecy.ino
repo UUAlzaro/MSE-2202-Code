@@ -8,11 +8,11 @@ int GreenMark = 0;
 int servo = 0; 
 // Define color sensor pins
 
-#define S0 4 //This are the pins I have defined
-#define S1 5
-#define S2 6
-#define S3 7
-#define sensorOut 8
+#define S0 40 //This are the pins I have defined
+#define S1 41
+#define S2 42
+#define S3 44
+#define sensorOut 43
 
 // Calibration Values
 // Get these from Calibration Sketch
@@ -43,8 +43,8 @@ void setup() {
   pinMode(S1, OUTPUT);
   pinMode(S2, OUTPUT);
   pinMode(S3, OUTPUT);
-  pinMode(12, OUTPUT); 
-  myServo.attach(9); 
+  pinMode(45, OUTPUT); 
+  myServo.attach(39); 
   
   // Set Sensor output as input
   pinMode(sensorOut, INPUT);
@@ -58,9 +58,9 @@ void setup() {
 }
 
 void loop() {
-    digitalWrite(12,LOW); 
+    digitalWrite(45,LOW); 
     delay(2000); 
-    digitalWrite(12,HIGH); 
+    digitalWrite(45,HIGH); 
   // Read Red value
   redPW = getRedPW();
   // Map to value from 0-255

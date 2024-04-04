@@ -1,3 +1,4 @@
+//SECOND DRIVE SYSTEM
 // Uncomment keywords to enable debugging output
 //#define DEBUG_DRIVE_SPEED    1
 #define DEBUG_ENCODER_COUNT 1
@@ -247,9 +248,9 @@ void loop() {
           case 0:  // move forward until obstacle ahead
 
             Bot.Forward("D1", leftDriveSpeed, rightDriveSpeed);  // drive ID, left speed, right speed
-            if (distance < 10) {
+            if (distance < 15) {
               //temp = LeftEncoder.lRawEncoderCount;
-              RightEncoder.clearEncoder();
+              RightEncoder.clearEncoder();  
               LeftEncoder.clearEncoder();
               driveSystem = 1;
             }
@@ -290,7 +291,7 @@ void loop() {
           case 4:  // Go forward until obstacle
 
             Bot.Forward("D1", leftDriveSpeed, rightDriveSpeed);  // drive ID, left speed, right speed
-            if (distance < 10) {
+            if (distance < 15) {
               temp = LeftEncoder.lRawEncoderCount;
               driveSystem = 5;
             }

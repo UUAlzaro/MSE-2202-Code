@@ -1,4 +1,4 @@
-//Sorting and Pickup
+//This is the Main Code for the colour sensor + Servo Motor Pair!!
 
 #include <ESP32Servo.h>
 Servo myServo; // creating a Servo object
